@@ -177,6 +177,8 @@
   			  			                x_admin_close();
   			  			                // 可以对父窗口进行刷新 
   			  			                x_admin_father_reload();
+  			  			                //让父类  创建重新加载
+  			  			                window.parent.opener.location.raload();
   			  			            });
   			            		}else{
   			            			layer.alert("增加失败", {icon: 3},function () {

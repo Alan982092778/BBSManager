@@ -97,6 +97,7 @@ public class UserdaoImpl implements com.bbs.dao.user.Userdao {
 
 	@Override
 	public int delAll(String[] uids) {
+		
 		StringBuffer sql = new StringBuffer("delete from bbs_user where userId in(");
 		// 根据参数数组的长度，拼接锁需要的?号个数
 		for (int i = 0; i < uids.length; i++) {
@@ -106,6 +107,7 @@ public class UserdaoImpl implements com.bbs.dao.user.Userdao {
 			}
 		}
 		sql.append(")");
+		// delete from bbs_user where userid in(test001,test002)
 		return DataUtils.executeUpdate(sql.toString(), uids);
 	}
 
